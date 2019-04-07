@@ -7,6 +7,7 @@ def max_list_iter(int_list):  # must use iteration not recursion
         raise ValueError
     if len(int_list) == 0:
         return None
+
     largest = int_list[0]
     for i in int_list:
         if i > largest:
@@ -14,12 +15,13 @@ def max_list_iter(int_list):  # must use iteration not recursion
     return largest
 
 
-def reverse_rec(int_list):   # must use recursion
+def reverse_rec(int_list):
     """recursively reverses a list of numbers and returns the reversed list
     If list is None, raises ValueError"""
 
     if int_list == None:
         raise ValueError
+
     if len(int_list) == 0:
         return []
 
@@ -28,16 +30,20 @@ def reverse_rec(int_list):   # must use recursion
     return [last] + reverse_rec(int_list)
 
 
-def bin_search(target, low, high, int_list):  # must use recursion
+def bin_search(target, low, high, int_list):
     """searches for target in int_list[low..high] and returns index if found
     If target is not found returns None. If list is None, raises ValueError """
 
     if int_list == None:
         raise ValueError
+
     if int_list[low] == target:
         return low
     elif int_list[high] == target:
         return high
+    elif high - low == 1:
+        return None
+
     if target < int_list[(low + high) // 2]:
         high = (low + high) // 2
     else:
