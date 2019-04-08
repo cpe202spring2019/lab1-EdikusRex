@@ -71,6 +71,10 @@ class TestLab1(unittest.TestCase):
             bin_search(1, 1, 1, None)
         tlist = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.assertEqual(bin_search(1, 0, len(tlist) - 1, tlist), None)
+        tlist = [15, 65, 87, 88, 89]
+        self.assertEqual(bin_search(20, 0, len(tlist) - 1, tlist), None)
+        tlist = [-57, -27, 12, 39, 56]
+        self.assertEqual(bin_search(90, 0, len(tlist) - 1, tlist), None)
 
         tlist = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
         self.assertEqual(bin_search(1, 0, len(tlist) - 1, tlist), 9)
