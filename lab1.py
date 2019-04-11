@@ -36,6 +36,12 @@ def bin_search(target, low, high, int_list):
 
     if int_list == None:
         raise ValueError
+    elif len(int_list) == 0:
+        return None
+    elif target < int_list[low]:
+        return None
+    elif target > int_list[high]:
+        return None
 
     if int_list[low] == target:
         return low

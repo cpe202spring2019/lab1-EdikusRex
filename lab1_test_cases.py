@@ -21,6 +21,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(max_list_iter([1, 0, 0, 0]), 1)
         self.assertEqual(max_list_iter([1, 1, 1, 0]), 1)
         self.assertEqual(max_list_iter([0, 1, 1, 1]), 1)
+        self.assertEqual(max_list_iter([]), None)
 
     def test_reverse_rec(self):
         # Tests a few random lists
@@ -69,6 +70,10 @@ class TestLab1(unittest.TestCase):
         # Tests border cases
         with self.assertRaises(ValueError):
             bin_search(1, 1, 1, None)
+        self.assertEqual(bin_search(300, 300, 300, []), None)
+        self.assertEqual(bin_search(20, 0, 0, [10]), None)
+        self.assertEqual(bin_search(5, 0, 0, [10]), None)
+
         tlist = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.assertEqual(bin_search(1, 0, len(tlist) - 1, tlist), None)
         tlist = [15, 65, 87, 88, 89]
